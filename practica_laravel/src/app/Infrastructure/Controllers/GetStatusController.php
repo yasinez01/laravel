@@ -6,12 +6,12 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller as BaseController;
 
-class StatusController extends BaseController
+class GetStatusController extends BaseController
 {
     public function __invoke(): JsonResponse
     {
         return response()->json([
-            'status' => 'Success',
+            'status' => 'Ok',
             'message' => 'Systems are up and running',
         ], Response::HTTP_OK);
     }

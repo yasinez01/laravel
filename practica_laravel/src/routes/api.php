@@ -1,8 +1,8 @@
 <?php
 
 use App\Infrastructure\Controllers\GetUserController;
-use App\Infrastructure\Controllers\IsEarlyAdopterUserController;
-use App\Infrastructure\Controllers\StatusController;
+use App\Infrastructure\Controllers\GetUsersController;
+use App\Infrastructure\Controllers\GetStatusController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,14 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
 
-Route::get(
-    '/status',
-    StatusController::class
-);
+Route::get('/status', GetStatusController::class);
+Route::get('/user/{userEmail}', GetUserController::class);
+Route::get('/users', GetUsersController::class);
 
-Route::get('user/{email}', IsEarlyAdopterUserController::class);
-Route::get('coin/status/{userId}', GetUserController::class);
