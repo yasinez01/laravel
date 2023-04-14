@@ -7,7 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller as BaseController;
 
-class GetUserController extends BaseController
+class GetApiController extends BaseController
 {
     private UserDataSource $userDataSource;
 
@@ -25,10 +25,16 @@ class GetUserController extends BaseController
             return response()->json([
                 'error' => 'usuario no encontrado'
             ], Response::HTTP_NOT_FOUND);
+        }else{
+            if($user->getId()<1000){
+                return response()->json([
+                    'El usuario es early adopter'
+                ], Response::HTTP_OK);
+            }else{
+                return response()->json([
+                    'El usuario no es early adopter'
+                ], Response::HTTP_OK);
+            }
         }
-        return response()->json([
-            'id' => strval($user->getId()),
-            'email' => 'email@email.com'
-        ], Response::HTTP_OK);
     }
 }

@@ -11,5 +11,5 @@ Interface UserDataSource
     /**
      * @return User[]
      */
-    public function getAll(): array;
+    public function getAll(): ?array;
 }

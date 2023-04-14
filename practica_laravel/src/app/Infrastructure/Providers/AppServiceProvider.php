@@ -6,6 +6,7 @@ use App\Application\UserDataSource\UserDataSource;
 use App\DataSource\Database\EloquentUserDataSource;
 use App\Infrastructure\Persistence\FileUserDataSource;
 use Illuminate\Support\ServiceProvider;
+use Tests\app\Infrastructure\Controller\FakeFileUserDataSource;
 
 class AppServiceProvider extends ServiceProvider
 {
