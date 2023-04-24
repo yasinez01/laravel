@@ -17,7 +17,7 @@ class User
     {
         return $this->id;
     }
-    public function getEmail(): int
+    public function getEmail(): String
     {
         return $this->email;
     }
